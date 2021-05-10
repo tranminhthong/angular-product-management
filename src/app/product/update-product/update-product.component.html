@@ -1,0 +1,36 @@
+<a  routerLink="">List Product</a>
+<h1>Update product</h1>
+<form [formGroup]="productFormUpdate" (ngSubmit)="updateProduct(index)">
+  <table>
+    <tr>
+      <td>Id</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><textarea formControlName="description"></textarea></td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>
+        <select formControlName="category">
+          <option *ngFor="let cate of listCate" [ngValue]="cate" [selected]="cate == true">{{cate.cate_name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Update</button></td>
+      <td></td>
+    </tr>
+  </table>
+</form>
+
